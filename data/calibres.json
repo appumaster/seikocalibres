@@ -1,20 +1,19 @@
+
 [
-  {
-    "name": "Seiko 6138A",
-    "description": "Chronograph movement, used in various models from 1970s.",
-    "image": "6138A.jpg",
-    "compatible": [
-      "6139A",
-      "6138B"
-    ]
-  },
-  {
-    "name": "Seiko 6106",
-    "description": "Automatic movement with day/date feature.",
-    "image": "6106.jpg",
-    "compatible": [
-      "6119",
-      "7009"
-    ]
-  }
+    {
+        "name": "6139A",
+        "parts": ["341W01A", "311W02A"],
+        "images": {
+            "341W01A": "img/341w01a.jpg",
+            "311W02A": "img/311w02a.jpg"
+        }
+    },
+    {
+        "name": "6138B",
+        "parts": ["341W01A", "321X03B"],
+        "images": {
+            "341W01A": "img/341w01a.jpg",
+            "321X03B": "img/321x03b.jpg"
+        }
+    }
 ]
