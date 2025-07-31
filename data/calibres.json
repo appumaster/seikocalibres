@@ -1,19 +1,14 @@
-
 [
-    {
-        "name": "6139A",
-        "parts": ["341W01A", "311W02A"],
-        "images": {
-            "341W01A": "img/341w01a.jpg",
-            "311W02A": "img/311w02a.jpg"
-        }
-    },
-    {
-        "name": "6138B",
-        "parts": ["341W01A", "321X03B"],
-        "images": {
-            "341W01A": "img/341w01a.jpg",
-            "321X03B": "img/321x03b.jpg"
-        }
+  {
+    "name": "6139A",
+    "parts": ["341W01A", "311W02A"],
+    "images": {
+      "341W01A": "img/341W01A.jpg"
     }
+  },
+  {
+    "name": "6139B",
+    "parts": ["341W01A", "401W03B"],
+    "images": {}
+  }
 ]

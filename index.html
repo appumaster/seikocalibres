@@ -1,23 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Seiko Calibre Cross-Reference</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seiko Calibre Cross-Reference</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <div class="container">
-        <h1>Seiko Calibre Cross-Reference</h1>
-        <div class="search-section">
-            <label for="calibreSearch">Search by Calibre:</label>
-            <input type="text" id="calibreSearch" placeholder="e.g. 6139A">
+<body class="p-4">
+  <div class="container">
+    <h1 class="mb-4">Seiko Calibre Cross-Reference</h1>
 
-            <label for="partSearch">Search by Part Number:</label>
-            <input type="text" id="partSearch" placeholder="e.g. 341W01A">
-        </div>
-        <div id="results"></div>
+    <div class="mb-3">
+      <label for="calibreSearch" class="form-label">Search by Calibre</label>
+      <input type="text" id="calibreSearch" class="form-control" placeholder="e.g. 6139A">
+      <div id="calibreSuggestions" class="suggestions"></div>
     </div>
-    <script src="script.js"></script>
+
+    <div class="mb-3">
+      <label for="partSearch" class="form-label">Search by Part Number</label>
+      <input type="text" id="partSearch" class="form-control" placeholder="e.g. 341W01A">
+      <div id="partSuggestions" class="suggestions"></div>
+    </div>
+
+    <div id="results"></div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
