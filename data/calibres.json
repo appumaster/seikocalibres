@@ -1,138 +1,108 @@
-[
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 112612,
-        "Part Name": "Barrel  & train-wheel  bridge",
-        "Part Image": "",
-        "Compatible Calibres": ""
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 122612,
-        "Part Name": "Center  wheel  bridge",
-        "Part Image": "",
-        "Compatible Calibres": "6119B, 6119C"
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 161805,
-        "Part Name": "Pallet  cock",
-        "Part Image": "",
-        "Compatible Calibres": ""
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 171612,
-        "Part Name": "Balance  cock",
-        "Part Image": "",
-        "Compatible Calibres": ""
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 193613,
-        "Part Name": "Framework  for   automatic  device with  ball-bearing",
-        "Part Image": "",
-        "Compatible Calibres": ""
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 205613,
-        "Part Name": "Complete  barrel  with  arbor",
-        "Part Image": "",
-        "Compatible Calibres": "6119B, 6119C, 6106A, 6106B, 6106C"
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 213612,
-        "Part Name": "Barrel  arbor",
-        "Part Image": "",
-        "Compatible Calibres": ""
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 224611,
-        "Part Name": "Center  wheel  &  pinion  with  cannon  pinion",
-        "Part Image": "",
-        "Compatible Calibres": ""
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 801611,
-        "Part Name": "Date  dial",
-        "Part Image": "",
-        "Compatible Calibres": ""
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 802610,
-        "Part Name": "Date  driving  wlleel",
-        "Part Image": "",
-        "Compatible Calibres": ""
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 808610,
-        "Part Name": "Date  dial  guard",
-        "Part Image": "",
-        "Compatible Calibres": ""
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 810610,
-        "Part Name": "Date jumper",
-        "Part Image": "",
-        "Compatible Calibres": ""
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 817610,
-        "Part Name": "Intermediate date  wheel",
-        "Part Image": "",
-        "Compatible Calibres": ""
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 868610,
-        "Part Name": "Day  finger",
-        "Part Image": "",
-        "Compatible Calibres": ""
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 870610,
-        "Part Name": "Day  star  with  dial disk",
-        "Part Image": "",
-        "Compatible Calibres": ""
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 880610,
-        "Part Name": "Date  corrector",
-        "Part Image": "",
-        "Compatible Calibres": ""
-    },
-    {
-        "Calibre": "6119A",
-        "Calibre Image": "",
-        "Part Number": 883610,
-        "Part Name": "Date  corrector  spring",
-        "Part Image": "",
-        "Compatible Calibres": ""
-    }
-]
+{
+  "6119A": {
+    "parts": [
+      {
+        "part": "112612",
+        "name": "Barrel  & train-wheel  bridge",
+        "image": "",
+        "compatible": ""
+      },
+      {
+        "part": "122612",
+        "name": "Center  wheel  bridge",
+        "image": "",
+        "compatible": "6119B, 6119C"
+      },
+      {
+        "part": "161805",
+        "name": "Pallet  cock",
+        "image": "",
+        "compatible": ""
+      },
+      {
+        "part": "171612",
+        "name": "Balance  cock",
+        "image": "",
+        "compatible": ""
+      },
+      {
+        "part": "193613",
+        "name": "Framework  for   automatic  device with  ball-bearing",
+        "image": "",
+        "compatible": ""
+      },
+      {
+        "part": "205613",
+        "name": "Complete  barrel  with  arbor",
+        "image": "",
+        "compatible": "6119B, 6119C, 6106A, 6106B, 6106C"
+      },
+      {
+        "part": "213612",
+        "name": "Barrel  arbor",
+        "image": "",
+        "compatible": ""
+      },
+      {
+        "part": "224611",
+        "name": "Center  wheel  &  pinion  with  cannon  pinion",
+        "image": "",
+        "compatible": ""
+      },
+      {
+        "part": "801611",
+        "name": "Date  dial",
+        "image": "",
+        "compatible": ""
+      },
+      {
+        "part": "802610",
+        "name": "Date  driving  wlleel",
+        "image": "",
+        "compatible": ""
+      },
+      {
+        "part": "808610",
+        "name": "Date  dial  guard",
+        "image": "",
+        "compatible": ""
+      },
+      {
+        "part": "810610",
+        "name": "Date jumper",
+        "image": "",
+        "compatible": ""
+      },
+      {
+        "part": "817610",
+        "name": "Intermediate date  wheel",
+        "image": "",
+        "compatible": ""
+      },
+      {
+        "part": "868610",
+        "name": "Day  finger",
+        "image": "",
+        "compatible": ""
+      },
+      {
+        "part": "870610",
+        "name": "Day  star  with  dial disk",
+        "image": "",
+        "compatible": ""
+      },
+      {
+        "part": "880610",
+        "name": "Date  corrector",
+        "image": "",
+        "compatible": ""
+      },
+      {
+        "part": "883610",
+        "name": "Date  corrector  spring",
+        "image": "",
+        "compatible": ""
+      }
+    ]
+  }
+}
