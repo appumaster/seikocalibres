@@ -1,30 +1,62 @@
-{
-  "6139A": {
+[
+  {
+    "calibre": "6139A",
     "parts": [
       {
-        "part": "341W01A",
+        "number": "341W01A",
         "name": "Chronograph Wheel",
         "image": "img/341W01A.jpg"
       },
       {
-        "part": "311W02A",
-        "name": "Balance Staff",
-        "image": "img/311W02A.jpg"
+        "number": "350P01A",
+        "name": "Minute Recording Wheel",
+        "image": "img/350P01A.jpg"
       }
-    ]
+    ],
+    "compatible": [
+      "6139B",
+      "6138B"
+    ],
+    "image": "img/6139A.jpg"
   },
-  "6138B": {
+  {
+    "calibre": "6106B",
     "parts": [
       {
-        "part": "341W01A",
-        "name": "Chronograph Wheel",
-        "image": "img/341W01A.jpg"
+        "number": "320F01A",
+        "name": "Day-Date Disk",
+        "image": "img/320F01A.jpg"
       },
       {
-        "part": "312W04B",
-        "name": "Main Spring",
-        "image": "img/312W04B.jpg"
+        "number": "400W02A",
+        "name": "Setting Lever",
+        "image": "img/400W02A.jpg"
       }
-    ]
+    ],
+    "compatible": [
+      "6106A",
+      "6119C"
+    ],
+    "image": "img/6106B.jpg"
+  },
+  {
+    "calibre": "6119C",
+    "parts": [
+      {
+        "number": "350P01A",
+        "name": "Minute Recording Wheel",
+        "image": "img/350P01A.jpg"
+      },
+      {
+        "number": "400W02A",
+        "name": "Setting Lever",
+        "image": "img/400W02A.jpg"
+      }
+    ],
+    "compatible": [
+      "6119B",
+      "6106B"
+    ],
+    "image": "img/6119C.jpg"
   }
-}
+]
