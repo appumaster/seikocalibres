@@ -1,8 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Seiko Calibre Cross-Reference</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -11,19 +11,21 @@
   <div class="container">
     <h1 class="mb-4">Seiko Calibre Cross-Reference</h1>
 
-    <div class="mb-3">
-      <label for="calibreSearch" class="form-label">Search by Calibre</label>
+    <div class="form-group mb-4 position-relative">
+      <label for="calibreSearch">Search by Calibre</label>
       <input type="text" id="calibreSearch" class="form-control" placeholder="e.g. 6139A">
       <div id="calibreSuggestions" class="suggestions"></div>
+      <button class="btn btn-primary mt-2" onclick="searchByCalibre()">Search</button>
     </div>
 
-    <div class="mb-3">
-      <label for="partSearch" class="form-label">Search by Part Number</label>
+    <div class="form-group mb-4 position-relative">
+      <label for="partSearch">Search by Part</label>
       <input type="text" id="partSearch" class="form-control" placeholder="e.g. 341W01A">
       <div id="partSuggestions" class="suggestions"></div>
+      <button class="btn btn-primary mt-2" onclick="searchByPart()">Search</button>
     </div>
 
-    <div id="results"></div>
+    <div id="results" class="mt-5"></div>
   </div>
 
   <script src="script.js"></script>

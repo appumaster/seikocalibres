@@ -1,88 +1,103 @@
-let data = [];
+
+let data;
 
 fetch('data/calibres.json')
-  .then(res => res.json())
-  .then(json => {
-    data = json;
-    document.getElementById('calibreSearch').addEventListener('input', handleCalibreInput);
-    document.getElementById('partSearch').addEventListener('input', handlePartInput);
+  .then(response => response.json())
+  .then(json => { data = json; });
+
+function autocomplete(inputId, suggestionId, key) {
+  const input = document.getElementById(inputId);
+  const suggestionBox = document.getElementById(suggestionId);
+
+  input.addEventListener("input", function () {
+    const val = this.value.toLowerCase();
+    suggestionBox.innerHTML = '';
+    if (!val) return;
+
+    const seen = new Set();
+    for (const calibre in data) {
+      if (key === 'calibre') {
+        if (calibre.toLowerCase().includes(val) && !seen.has(calibre)) {
+          const div = document.createElement("div");
+          div.textContent = calibre;
+          div.onclick = () => {
+            input.value = calibre;
+            suggestionBox.innerHTML = '';
+            searchByCalibre();
+          };
+          suggestionBox.appendChild(div);
+          seen.add(calibre);
+        }
+      } else if (key === 'part') {
+        for (const part of data[calibre].parts) {
+          if (part.part.toLowerCase().includes(val) && !seen.has(part.part)) {
+            const div = document.createElement("div");
+            div.textContent = part.part;
+            div.onclick = () => {
+              input.value = part.part;
+              suggestionBox.innerHTML = '';
+              searchByPart();
+            };
+            suggestionBox.appendChild(div);
+            seen.add(part.part);
+          }
+        }
+      }
+    }
   });
-
-function handleCalibreInput(e) {
-  const value = e.target.value.toLowerCase();
-  const suggestions = document.getElementById('calibreSuggestions');
-  suggestions.innerHTML = '';
-  if (!value) {
-    suggestions.style.display = 'none';
-    return;
-  }
-
-  const matches = data.filter(c => c.name.toLowerCase().includes(value));
-  matches.forEach(match => {
-    const div = document.createElement('div');
-    div.textContent = match.name;
-    div.onclick = () => {
-      document.getElementById('calibreSearch').value = match.name;
-      suggestions.style.display = 'none';
-      searchByCalibre(match.name);
-    };
-    suggestions.appendChild(div);
-  });
-
-  suggestions.style.display = matches.length ? 'block' : 'none';
 }
 
-function handlePartInput(e) {
-  const value = e.target.value.toLowerCase();
-  const suggestions = document.getElementById('partSuggestions');
-  suggestions.innerHTML = '';
-  if (!value) {
-    suggestions.style.display = 'none';
-    return;
-  }
+function searchByCalibre() {
+  const input = document.getElementById("calibreSearch").value.trim();
+  const results = document.getElementById("results");
+  results.innerHTML = '';
 
-  const uniqueParts = new Set();
-  data.forEach(c => c.parts.forEach(p => uniqueParts.add(p)));
-
-  const matches = Array.from(uniqueParts).filter(p => p.toLowerCase().includes(value));
-  matches.forEach(match => {
-    const div = document.createElement('div');
-    div.textContent = match;
-    div.onclick = () => {
-      document.getElementById('partSearch').value = match;
-      suggestions.style.display = 'none';
-      searchByPart(match);
-    };
-    suggestions.appendChild(div);
-  });
-
-  suggestions.style.display = matches.length ? 'block' : 'none';
-}
-
-function searchByCalibre(calibre) {
-  const resultDiv = document.getElementById('results');
-  resultDiv.innerHTML = '';
-  const entry = data.find(c => c.name === calibre);
-  if (entry) {
-    let html = '<h3>' + entry.name + '</h3><ul>';
-    entry.parts.forEach(part => {
-      html += '<li>' + part + (entry.images[part] ? ' <img src="' + entry.images[part] + '" width="50">' : '') + '</li>';
-    });
-    html += '</ul>';
-    resultDiv.innerHTML = html;
+  if (data[input]) {
+    const html = `<h3>Parts in Calibre: ${input}</h3>` +
+      data[input].parts.map(part =>
+        `<div><strong>${part.part}</strong> - ${part.name || ''} <br>` +
+        (part.image ? `<img src="${part.image}" alt="${part.part}" style="max-width:100px">` : '') +
+        `</div><hr>`
+      ).join('');
+    results.innerHTML = html;
+  } else {
+    results.innerHTML = '<p>No matching calibre found.</p>';
   }
 }
 
-function searchByPart(part) {
-  const resultDiv = document.getElementById('results');
-  resultDiv.innerHTML = '';
-  const calibres = data.filter(c => c.parts.includes(part));
-  if (calibres.length) {
-    let html = '<h3>Part: ' + part + '</h3><ul>';
-    calibres.forEach(c => {
-      html += '<li>' + c.name + (c.images[part] ? ' <img src="' + c.images[part] + '" width="50">' : '') + '</li>';
-    });
-    html += '</ul>';
-    resultDiv.innerHTML = html;
+function searchByPart() {
+  const partInput = document.getElementById("partSearch").value.trim();
+  const results = document.getElementById("results");
+  results.innerHTML = '';
+
+  const matchingCalibres = [];
+  for (const calibre in data) {
+    for (const part of data[calibre].parts) {
+      if (part.part === partInput) {
+        matchingCalibres.push({
+          calibre,
+          image: part.image || '',
+          name: part.name || ''
+        });
+        break;
+      }
+    }
+  }
+
+  if (matchingCalibres.length) {
+    const html = `<h3>Calibres using Part: ${partInput}</h3>` +
+      matchingCalibres.map(c =>
+        `<div><strong>${c.calibre}</strong> ${c.name}<br>` +
+        (c.image ? `<img src="${c.image}" alt="${partInput}" style="max-width:100px">` : '') +
+        `</div><hr>`
+      ).join('');
+    results.innerHTML = html;
+  } else {
+    results.innerHTML = '<p>No matching part found in database.</p>';
   }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  autocomplete("calibreSearch", "calibreSuggestions", "calibre");
+  autocomplete("partSearch", "partSuggestions", "part");
+});

@@ -1,14 +1,30 @@
-[
-  {
-    "name": "6139A",
-    "parts": ["341W01A", "311W02A"],
-    "images": {
-      "341W01A": "img/341W01A.jpg"
-    }
+{
+  "6139A": {
+    "parts": [
+      {
+        "part": "341W01A",
+        "name": "Chronograph Wheel",
+        "image": "img/341W01A.jpg"
+      },
+      {
+        "part": "311W02A",
+        "name": "Balance Staff",
+        "image": "img/311W02A.jpg"
+      }
+    ]
   },
-  {
-    "name": "6139B",
-    "parts": ["341W01A", "401W03B"],
-    "images": {}
+  "6138B": {
+    "parts": [
+      {
+        "part": "341W01A",
+        "name": "Chronograph Wheel",
+        "image": "img/341W01A.jpg"
+      },
+      {
+        "part": "312W04B",
+        "name": "Main Spring",
+        "image": "img/312W04B.jpg"
+      }
+    ]
   }
-]
+}
