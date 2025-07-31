@@ -1,18 +1,25 @@
 .suggestions {
   position: absolute;
-  background: white;
+  background: #f9f9f9;
   border: 1px solid #ccc;
-  max-height: 150px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  max-height: 180px;
   overflow-y: auto;
   z-index: 1000;
   width: 100%;
+  margin-top: 4px;
 }
 
 .suggestions div {
-  padding: 8px;
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #333;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .suggestions div:hover {
-  background-color: #f0f0f0;
+  background-color: #007bff;
+  color: white;
 }
